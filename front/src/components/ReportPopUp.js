@@ -60,7 +60,7 @@ class ReportPopUp extends React.Component{
                                         Save
                                     </div>
                                     <div className="ui primary button">
-                                        Cancle
+                                        Cancel
                                     </div>
                                 </div>
                         </div>
