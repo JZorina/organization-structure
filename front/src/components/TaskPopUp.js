@@ -9,7 +9,6 @@ class TaskPopUp extends React.Component{
             task:'',
             assignDate:'',
             dueDate:'',
-            id:this.props.emp.id
         } 
     }
     componentDidMount(){
@@ -21,7 +20,7 @@ class TaskPopUp extends React.Component{
             task:this.state.task,
             assignDate:this.state.assignDate,
             dueDate:this.state.dueDate,
-            empId:this.state.id
+            empId:this.props.emp.id
 
         }).then((response)=>{
             alert(response.data.message);
@@ -30,12 +29,12 @@ class TaskPopUp extends React.Component{
        this.setState({dueDate:''});
     }
     GetCurrentDate=()=> {
-        console.log(this);
         var tempDate = new Date();
         var date = tempDate.getFullYear() + '-' + (tempDate.getMonth()+1) + '-' + tempDate.getDate();
         this.setState({assignDate:date});
       }
   render (){
+    console.log(this);
     const {name}=this.props.emp;
     return(
         <Popup trigger={<button className="mini ui violet button">Assign Task</button>} modal>

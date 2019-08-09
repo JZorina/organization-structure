@@ -14,6 +14,9 @@ router.post('/', function(req, res, next) {
         } 
         else 
         {
+            console.log(rows);
+            if(!rows[0].manager)
+                rows[0].manager="-";
             ret = JSON.stringify(rows);
             res.send(ret);
         }

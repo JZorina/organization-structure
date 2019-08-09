@@ -19,7 +19,6 @@ router.get('/', function(req, res, next) {
         {
           ret = JSON.stringify(rows);
           res.send(ret);
-          console.log(ret);     
         }
       })
     })

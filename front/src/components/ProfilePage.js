@@ -42,7 +42,7 @@ const ProfilePage=({emp,nextPath,id,subs})=>{
                         
                         <div className="cloumn">
                             <div  style={{paddingTop:'15px', paddingLeft:'60px'}}>
-                               <ReportPopUp empId={id}/>
+                               <ReportPopUp empId={id} manager={manager}/>
                             </div>
                         </div>
                     </div>

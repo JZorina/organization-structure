@@ -8,7 +8,8 @@ class ReportPopUp extends React.Component{
         super(props);
         this.state={
             report:'',
-            date:''
+            date:'',
+            CEO:false
         } 
     }
     componentDidMount(){
@@ -32,6 +33,9 @@ class ReportPopUp extends React.Component{
         this.setState({date:date});
       }
     render(){
+        console.log(this);
+      
+ 
         return( 
             <Popup trigger={<button className="ui inverted violet button">Report</button>} modal>
                 {close => (
@@ -39,25 +43,35 @@ class ReportPopUp extends React.Component{
                         <button className="close" onClick={close}>
                             &times;
                         </button>
-                        <div className="header"> Report to manger </div>
-                        <div className="content">
-                            <div className="ui fluid icon input focus">
-                                <input type="text" placeholder="type here"
-                                value={this.state.report}
-                                onChange={ e => this.setState({report: e.target.value}) }></input>
-                            </div>
+                        {
+                            this.props.manager!=='-' &&
+                            <div>
+                                <div className="header"> Report to manger </div>
+                                <div className="content">
+                                    <div className="ui fluid icon input focus">
+                                        <input type="text" placeholder="type here"
+                                        value={this.state.report}
+                                        onChange={ e => this.setState({report: e.target.value}) }></input>
+                                    </div>
+                                </div>
+                                <div className="ui two bottom attached buttons">
+                                    <div className="ui button"
+                                    onClick={this.SaveReport}>
+                                        Save
+                                    </div>
+                                    <div className="ui primary button">
+                                        Cancle
+                                    </div>
+                                </div>
                         </div>
-                        <div className="ui two bottom attached buttons">
-                            <div className="ui button"
-                            onClick={this.SaveReport}>
-                                Save
-                            </div>
-                            <div className="ui primary button">
-                                Cancle
+                        }
+                        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+                            <div className="ui  massive violet label">
+                                You are the CEO 
                             </div>
                         </div>
                     </div>
-                    )}
+                         )}
             </Popup>
         );}
     }

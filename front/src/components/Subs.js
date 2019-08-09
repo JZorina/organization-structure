@@ -2,7 +2,9 @@ import React from 'react';
 import TaskPopUp from './TaskPopUp';
 
 const Subs=({subs,myId})=>{
+    console.log(subs);
     return(
+        
         <div>
             <table  className="ui single line table">
                 <thead>
