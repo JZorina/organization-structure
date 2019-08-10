@@ -57,16 +57,16 @@ const ProfilePage=({emp,nextPath,id,subs})=>{
                 </div>
             </div>
         </div>
-        <div style={{paddingTop:"4em"}}>
-            <div className="ui segment">
-                <label>Reports:</label>
-                <div style={{paddingTop:"30px"}}>
-                    <Reports empId={id}/>
+
+        {subs.length>0 &&<div>
+            <div style={{paddingTop:"4em"}}>
+                <div className="ui segment">
+                    <label>Reports:</label>
+                    <div style={{paddingTop:"30px"}}>
+                        <Reports empId={id}/>
+                    </div>
                 </div>
             </div>
-        </div>
-        {
-            subs.length>0 &&
             <div style={{paddingTop:"4em"}}>
                 <div className="ui segment">
                     <label>My subordinates:</label>
@@ -75,9 +75,10 @@ const ProfilePage=({emp,nextPath,id,subs})=>{
                     </div>
                 </div>
             </div>
-        }
+        </div>}
+        
         <div style={{paddingTop:'35px', justifyContent:'center', display:'flex'}}>
-            <button className="ui inverted violet button"
+            <button className="ui inverted blue button"
             onClick={nextPath}>
                 Back
             </button>
